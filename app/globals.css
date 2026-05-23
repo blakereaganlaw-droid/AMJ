@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --background: #faf9f7;
+  --foreground: #2d3436;
+  --card: #ffffff;
+  --card-border: #e8e6e1;
+  --muted: #6b7280;
+  --sage: #7c9a82;
+  --sage-light: #e8f0ea;
+  --sky: #7bafd4;
+  --sky-light: #e8f4fa;
+  --lavender: #a89bc4;
+  --lavender-light: #f0ecf5;
+  --teal: #6b9e9e;
+  --teal-light: #e6f2f2;
+  --cream: #f5f3ef;
+  --accent: var(--sage);
+  --radius: 1rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-sage: var(--sage);
+  --color-sage-light: var(--sage-light);
+  --color-sky: var(--sky);
+  --color-sky-light: var(--sky-light);
+  --color-lavender: var(--lavender);
+  --color-lavender-light: var(--lavender-light);
+  --color-teal: var(--teal);
+  --color-teal-light: var(--teal-light);
+  --color-cream: var(--cream);
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--sage);
+  outline-offset: 2px;
+}
