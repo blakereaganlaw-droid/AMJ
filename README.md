@@ -1,4 +1,4 @@
-# Health Journal
+# Health Journal (AMJ)
 
 A calm, private health journal and tracker built with Next.js, Supabase, and Tailwind CSS. Designed for personal wellness journaling, symptom tracking, medication logs, reminders, care-plan tasks, and goals.
 
