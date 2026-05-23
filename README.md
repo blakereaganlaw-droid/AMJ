@@ -76,15 +76,37 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Deploy to Vercel
 
-1. Push the repository to GitHub
-2. Import the project in Vercel
-3. Add environment variables (same as `.env.local`, with production URLs)
-4. Set `NEXT_PUBLIC_APP_URL` to your production domain
-5. Add the Vercel production and preview URLs to Supabase redirect allowlist
-6. Deploy
+**Live production:** [https://amj-gamma.vercel.app](https://amj-gamma.vercel.app)
+
+**Vercel project:** [blake-reagan-s-projects/amj](https://vercel.com/blake-reagan-s-projects/amj)
+
+**GitHub:** [blakereaganlaw-droid/AMJ](https://github.com/blakereaganlaw-droid/AMJ) (auto-deploys on push to `main`)
+
+### Required environment variables (Vercel Dashboard → Project → Settings → Environment Variables)
+
+| Variable | Value |
+|----------|--------|
+| `NEXT_PUBLIC_SUPABASE_URL` | Your Supabase project URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Your Supabase anon key |
+| `NEXT_PUBLIC_APP_URL` | `https://amj-gamma.vercel.app` (already set for Production) |
+
+After adding Supabase variables, redeploy from the Vercel dashboard or push a commit to `main`.
+
+### Supabase Auth redirect URLs
+
+In **Authentication → URL Configuration**, add:
+
+- **Site URL:** `https://amj-gamma.vercel.app`
+- **Redirect URLs:**
+  - `https://amj-gamma.vercel.app/auth/callback`
+  - `http://localhost:3000/auth/callback`
+  - `https://*.vercel.app/auth/callback` (preview deployments)
+
+### CLI deploy (optional)
 
 ```bash
-npm run build
+npx vercel link --project amj
+npx vercel deploy --prod
 ```
 
 ## Project structure
